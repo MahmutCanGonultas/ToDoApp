@@ -21,6 +21,8 @@ export async function register(req: Request, res: Response) {
 // LOGIN
 export async function login(req: Request, res: Response) {
   const result = loginSchema.safeParse(req.body);
+  console.log(req.body);
+  console.log(result);
 
   if (!result.success) {
     return res.status(400).json({ error: "Invalid Input" });

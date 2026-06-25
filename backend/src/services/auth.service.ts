@@ -24,6 +24,8 @@ export async function loginUser(email: string, password: string) {
   );
 
   const user = result.rows[0];
+  console.log(result);
+
   if (!user) {
     return null;
   }

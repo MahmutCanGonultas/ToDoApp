@@ -5,6 +5,7 @@ const JWT_SECRET = process.env.JWT_SECRET as string;
 
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
   const authHeader = req.headers.authorization;
+  console.log(req.headers);
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ error: "No token provided" });
